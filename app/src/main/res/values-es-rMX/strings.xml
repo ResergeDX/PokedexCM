@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PokedexCM</string>
-    <string name="title" translatable="false">POKEDEX DX</string>
     <string name="nombre_pokemon">Nombre:</string>
     <string name="weight_pk">Peso:</string>
     <string name="height_pk">Altura:</string>
@@ -10,7 +10,5 @@
     <string name="tipos_pk">Tipos:</string>
     <string name="Shiny_btn">Variocolor</string>
     <string name="Normal_btn">Base</string>
-    <string name="name" translatable="false">Missigno</string>
     <string name="habilidad">Nombre Habilidad</string>
-    <string name="Number" translatable="false">#000</string>
 </resources>

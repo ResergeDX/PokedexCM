@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PokedexCM</string>
+    <string name="nombre_pokemon">Name:</string>
+    <string name="weight_pk">Weight:</string>
+    <string name="height_pk">Height:</string>
+    <string name="base_pk">Base experience:</string>
+    <string name="stat_pk">Statistics:</string>
+    <string name="ability_pk">Abilities:</string>
+    <string name="tipos_pk">Types:</string>
+    <string name="Shiny_btn">Shiny</string>
+    <string name="Normal_btn">Base</string>
+    <string name="habilidad">Name Ability</string>
+</resources>

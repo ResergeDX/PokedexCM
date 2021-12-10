@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -30,6 +31,7 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
     private var imageDefault=""
     private var imageShiny=""
     private lateinit var imagenPokemon:ImageView
+    private lateinit var buttonShiny: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -61,6 +63,8 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
                     tvBaseExp.text=response.body()?.exp_base
                     tvHeight.text=response.body()?.altura
                     tvWeight.text=response.body()?.peso
+
+                    buttonShiny=btShiny
                     btShiny.setOnClickListener(this@PokemonDetail)
 
                     abilities_list=response.body()?.abilities!!
@@ -128,17 +132,23 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(p0: View?) {
+        //Caso Shiny
         if (boolShiny==false){
             Glide.with(this@PokemonDetail)
                 .load(imageDefault)
                 .into(imagenPokemon)
             boolShiny=true
+            buttonShiny.setBackgroundResource(R.drawable.button_shiny_sel)
+            buttonShiny.setText(R.string.Shiny_btn)
+
         }else{
+            //Caso por defecto
             Glide.with(this@PokemonDetail)
                 .load(imageShiny)
                 .into(imagenPokemon)
             boolShiny=false
-
+            buttonShiny.setBackgroundResource(R.drawable.button_def_sel)
+            buttonShiny.setText(R.string.Normal_btn)
         }
     }
 
