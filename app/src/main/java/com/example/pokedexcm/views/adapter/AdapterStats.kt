@@ -3,13 +3,9 @@ package com.example.pokedexcm.views.adapter
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
-import android.graphics.ColorFilter
-import android.graphics.PorterDuff
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pokedexcm.R
 import com.example.pokedexcm.databinding.StatsElementBinding
 
 import com.example.pokedexcm.model.Statistics
@@ -19,7 +15,7 @@ class AdapterStats(context: Context, stats_list:List<Statistics>): RecyclerView.
     private val estadisticas=stats_list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterStats.ViewHolder {
         val layoutInflater= LayoutInflater.from(parent?.context)
-        val binding = StatsElementBinding.inflate(layoutInflater)
+        val binding = StatsElementBinding.inflate(layoutInflater,parent,false)
         return ViewHolder(binding)
     }
 
@@ -39,29 +35,29 @@ class AdapterStats(context: Context, stats_list:List<Statistics>): RecyclerView.
             tvNameStat.text=stat.stat?.name_stat
             tvInfoStat.text=stat.base_stat
             pbStatistics.progress= Integer.parseInt(stat.base_stat)
-            /*
+
             when(stat.stat?.name_stat){
                 "hp"->{
-                    pbStatistics.setProgressTintList(ColorStateList.valueOf(Color.parseColor(R.color.hp.toString())))
+                    pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,0,0,255))
                 }
                 "attack"->{
-                    pbStatistics.setProgressTintList(ColorStateList.valueOf(Color.parseColor(R.color.attack.toString())))
+                    pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,255,0,0))
                 }
                 "defense"->{
-                    pbStatistics.setProgressTintList(ColorStateList.valueOf(Color.parseColor(R.color.defense.toString())))
+                    pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,0,255,0))
                 }
                 "special-attack"->{
-                    pbStatistics.setProgressTintList(ColorStateList.valueOf(Color.parseColor(R.color.special_attack.toString())))
+                    pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,255,255,0))
                 }
                 "special-defense"->{
-                    pbStatistics.setProgressTintList(ColorStateList.valueOf(Color.parseColor(R.color.special_defense.toString())))
+                    pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,0,255,255))
                 }
                 "speed"->{
-                    pbStatistics.setProgressTintList(ColorStateList.valueOf(Color.parseColor(R.color.speed.toString())))
+                    pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,255,0,255))
                 }
 
 
-            }*/
+            }
 
         }
     }

@@ -6,6 +6,9 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.pokedexcm.R
@@ -32,14 +35,27 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
     private var imageShiny=""
     private lateinit var imagenPokemon:ImageView
     private lateinit var buttonShiny: Button
+    private lateinit var pb_carga: ProgressBar
+    private var cardList=ArrayList<CardView>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding =ActivityPokeDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        with(binding) {
+            cardList.add(cvVistaPokemon)
+            cardList.add(cvInfoBase)
+            cardList.add(cvStats)
+            cardList.add(cvAbilities)
+            pb_carga=pbCharge
+        }
+        for (cd in cardList){
+            cd.visibility=View.INVISIBLE
 
-
+        }
+        pb_carga.visibility=View.VISIBLE
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -58,6 +74,12 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
             override fun onResponse(call: Call<PokeDetail>, response: Response<PokeDetail>) {
                 Log.d(LOGTAG, "Conexion exitosa ${response.body()?.Nombre}")
                 with(binding) {
+
+                    for (cd in cardList){
+                        cd.visibility=View.VISIBLE
+
+                    }
+                    pb_carga.visibility=View.INVISIBLE
 
                     tvPokemonName.text=response.body()?.Nombre
                     tvBaseExp.text=response.body()?.exp_base
@@ -88,7 +110,11 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
                     TypeImage(lista_tipos.get(0),ivType1)
                     if(lista_tipos.size==2) {
                         TypeImage(lista_tipos.get(1), ivType2)
+                        ivType2.visibility=View.VISIBLE
+                    }else{
+                        ivType2.visibility=View.INVISIBLE
                     }
+
                     /*
                     abilities_list=response.body()?.abilities!!
                     estadisticas= response.body()?.estadisticas!!
@@ -151,5 +177,45 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
             buttonShiny.setText(R.string.Normal_btn)
         }
     }
+
+    fun SayType(view: android.view.View) {
+        var tipe_num:Int=0
+        var tipe_text=""
+        var type_Res: String
+        if (binding.ivType1.isPressed){
+            tipe_num=1
+            tipe_text= lista_tipos[0].tipo?.tipo_nombre.toString()
+
+        }else if(binding.ivType2.isPressed){
+            tipe_num=2
+            tipe_text=lista_tipos[1].tipo?.tipo_nombre.toString()
+        }
+        Log.d(LOGTAG,"${tipe_text}")
+        when(tipe_text){
+            "bug"->{type_Res=getString(R.string.bug)}
+            "dark"->{type_Res=getString(R.string.dark)}
+            "dragon"->{type_Res=getString(R.string.dark)}
+            "electric"->{type_Res=getString(R.string.electric)}
+            "fairy"->{type_Res=getString(R.string.fairy)}
+            "fighting"->{type_Res=getString(R.string.fighting)}
+            "fire"->{type_Res=getString(R.string.fire)}
+            "flying"->{type_Res=getString(R.string.flying)}
+            "ghost"->{type_Res=getString(R.string.ghost)}
+            "grass"->{type_Res=getString(R.string.grass)}
+            "ground"->{type_Res=getString(R.string.ground)}
+            "ice"->{type_Res=getString(R.string.ice)}
+            "normal"->{type_Res=getString(R.string.normal)}
+            "poison"->{type_Res=getString(R.string.poison)}
+            "psychic"->{type_Res=getString(R.string.psychic)}
+            "rock"->{type_Res=getString(R.string.rock)}
+            "steel"->{type_Res=getString(R.string.steel)}
+            "water"->{type_Res=getString(R.string.water)}
+            else->type_Res="NULL"
+        }
+
+        Toast.makeText(this, getString(R.string.Tipo,tipe_num,type_Res),Toast.LENGTH_SHORT).show()
+
+    }
+
 
 }

@@ -18,7 +18,7 @@ class Adapter(context:Context, pokemons:List<Pokemon>, onItemListener: PokemonLi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHolder {
         val layoutInflater= LayoutInflater.from(parent?.context)
-        val binding=PokemonCardBinding.inflate(layoutInflater)
+        val binding=PokemonCardBinding.inflate(layoutInflater,parent,false)
         return ViewHolder(binding,M_OnItemListener)
     }
 

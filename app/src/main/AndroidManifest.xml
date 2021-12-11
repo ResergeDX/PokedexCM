@@ -16,10 +16,12 @@
             android:exported="false" />
         <activity
             android:name=".views.ui.activities.PokemonDetail"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".views.ui.activities.PokemonList"
-            android:exported="true" >
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

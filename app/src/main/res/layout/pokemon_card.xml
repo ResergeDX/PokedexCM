@@ -1,76 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/pokemon"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="20dp"
+    android:layout_height="275dp"
+    android:layout_margin="3dp"
     app:cardBackgroundColor="@color/rotom_screen"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="1dp">
+        android:layout_height="match_parent">
 
 
         <ImageView
             android:id="@+id/ivSprite"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline4"
-            app:layout_constraintEnd_toStartOf="@+id/guideline5"
-            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline4"
             tools:srcCompat="@tools:sample/avatars" />
-
-        <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="175dp" />
 
         <TextView
             android:id="@+id/tvName"
             android:layout_width="230dp"
             android:layout_height="49dp"
+            android:layout_margin="15dp"
             android:fontFamily="@font/advanced_pixel_lcd7"
             android:text="TextView"
             android:textColor="@color/black"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.36"
-            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.33"
+            app:layout_constraintVertical_bias="0.09"
             tools:text="@string/name" />
 
         <TextView
             android:id="@+id/tvNumPokedex"
-            android:layout_width="61dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:fontFamily="@font/checkbook"
             android:text="@string/Number"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.046"
-            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintHorizontal_bias="0.90"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.705" />
+            app:layout_constraintVertical_bias="0.90" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline5"
+            android:id="@+id/guideline4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="253dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
