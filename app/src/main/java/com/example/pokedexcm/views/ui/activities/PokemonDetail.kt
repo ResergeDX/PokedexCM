@@ -37,7 +37,8 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
     private lateinit var buttonShiny: Button
     private lateinit var pb_carga: ProgressBar
     private var cardList=ArrayList<CardView>()
-
+    private var peso_str=""
+    private var altura_str=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -83,8 +84,13 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
 
                     tvPokemonName.text=response.body()?.Nombre
                     tvBaseExp.text=response.body()?.exp_base
-                    tvHeight.text=response.body()?.altura
-                    tvWeight.text=response.body()?.peso
+
+                    peso_str=(response.body()?.peso?.toFloat()?.div(10)).toString()
+                    altura_str=(response.body()?.altura?.toFloat()?.div(10)).toString()
+
+
+                    tvHeight.text=getString(R.string.altura,altura_str)
+                    tvWeight.text=getString(R.string.peso,peso_str)
 
                     buttonShiny=btShiny
                     btShiny.setOnClickListener(this@PokemonDetail)
@@ -107,9 +113,9 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
                     val adapter_Habilidad= AdapterAbility(this@PokemonDetail,abilities_list)
                     rvAbilities.layoutManager=LinearLayoutManager(this@PokemonDetail)
                     rvAbilities.adapter=adapter_Habilidad
-                    TypeImage(lista_tipos.get(0),ivType1)
+                    TypeImage(lista_tipos[0],ivType1)
                     if(lista_tipos.size==2) {
-                        TypeImage(lista_tipos.get(1), ivType2)
+                        TypeImage(lista_tipos[1], ivType2)
                         ivType2.visibility=View.VISIBLE
                     }else{
                         ivType2.visibility=View.INVISIBLE
@@ -126,7 +132,9 @@ class PokemonDetail : AppCompatActivity(), View.OnClickListener {
                 }
             }
             override fun onFailure(call: Call<PokeDetail>, t: Throwable) {
+
                 Log.d(LOGTAG, "Conexion Fallida")
+                Toast.makeText(this@PokemonDetail, getString(R.string.fail_connect), Toast.LENGTH_LONG).show()
             }
 
         })

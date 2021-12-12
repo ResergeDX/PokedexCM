@@ -33,4 +33,9 @@
     <string name="type01">Type 01</string>
     <string name="type02">Type 02</string>
     <string name="fail_connect">Failed Connection</string>
+    <string name="attack">"Attack: "</string>
+    <string name="defense">"Defense: "</string>
+    <string name="sp_attack">Special Attack:</string>
+    <string name="sp_defense">Special Defense:</string>
+    <string name="speed">Speed:</string>
 </resources>

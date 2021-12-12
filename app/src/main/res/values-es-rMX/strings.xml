@@ -4,7 +4,7 @@
     <string name="nombre_pokemon">Nombre:</string>
     <string name="weight_pk">Peso:</string>
     <string name="height_pk">Altura:</string>
-    <string name="base_pk">Experiencia Base:</string>
+    <string name="base_pk">Exp. Base:</string>
     <string name="stat_pk">Estadisticas:</string>
     <string name="ability_pk">Habilidades:</string>
     <string name="tipos_pk">Tipos:</string>
@@ -33,4 +33,9 @@
     <string name="type01">Tipo 01</string>
     <string name="type02">Tipo 02</string>
     <string name="fail_connect">Conexión Fallida</string>
+    <string name="attack">"Ataque: "</string>
+    <string name="defense">"Defensa: "</string>
+    <string name="sp_attack">Ataque Especial:</string>
+    <string name="sp_defense">Defensa Especial:</string>
+    <string name="speed">Velocidad:</string>
 </resources>

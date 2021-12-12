@@ -40,7 +40,7 @@ class AdapterAbility(context: Context, ability_list:List<Ability>): RecyclerView
                 card.setBackgroundResource(R.drawable.card_ability)
                 tvAbility.setTextColor(Color.WHITE)
             }
-            tvAbility.text=habilidad.ability?.ab_nombre
+            tvAbility.text=habilidad.ability?.ab_nombre?.replace("-"," ")
 
 
         }

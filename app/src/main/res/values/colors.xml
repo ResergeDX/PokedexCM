@@ -28,4 +28,5 @@
     <color name="Ability_dark">#A60320AF</color>
     <color name="hidden_Ability">#80FF001D</color>
     <color name="hidden_Ability_dark">#A6A10000</color>
+    <color name="charge_pk_info">#B30025A8</color>
 </resources>

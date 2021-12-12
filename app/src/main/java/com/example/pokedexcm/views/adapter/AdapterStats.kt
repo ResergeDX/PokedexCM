@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pokedexcm.R
 import com.example.pokedexcm.databinding.StatsElementBinding
 
 import com.example.pokedexcm.model.Statistics
@@ -32,27 +33,33 @@ class AdapterStats(context: Context, stats_list:List<Statistics>): RecyclerView.
         private var pbStatistics=binding.pbInfoStat
         fun bindData(stat:Statistics){
 
-            tvNameStat.text=stat.stat?.name_stat
+
             tvInfoStat.text=stat.base_stat
             pbStatistics.progress= Integer.parseInt(stat.base_stat)
 
             when(stat.stat?.name_stat){
                 "hp"->{
+                    tvNameStat.setText(R.string.hp)
                     pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,0,0,255))
                 }
                 "attack"->{
+                    tvNameStat.setText(R.string.attack)
                     pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,255,0,0))
                 }
                 "defense"->{
+                    tvNameStat.setText(R.string.defense)
                     pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,0,255,0))
                 }
                 "special-attack"->{
+                    tvNameStat.setText(R.string.sp_attack)
                     pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,255,255,0))
                 }
                 "special-defense"->{
+                    tvNameStat.setText(R.string.sp_defense)
                     pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,0,255,255))
                 }
                 "speed"->{
+                    tvNameStat.setText(R.string.speed)
                     pbStatistics.progressTintList = ColorStateList.valueOf(Color.argb(255,255,0,255))
                 }
 
