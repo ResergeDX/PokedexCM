@@ -12,7 +12,7 @@ La vista de la actividad mostrará de forma descendente los 151 pokémon. Mostra
   <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/ListaBase2.jpg" alt="img" width="300" height="500" />
 </p>
 
-Cada elemento de la lista es seleccionable. Al elegir un pokémon se´enviará a la actividad de la información especifica.
+Cada elemento de la lista es seleccionable. Al elegir un pokémon se enviará a la actividad de la información especifica.
 
 ### Detalle de Pokémon Seleccionado
 La información a desplegar se dividirá en 4 seccioneses:
@@ -31,7 +31,7 @@ La segunda sección tiene la siguiente información
 * Peso: Mostrado en Kilogramos
 
 ### Estadisticas
-La tercera sección se tiene la información de las estadisticas base mostradas en una lista. Cada elemento tiene el nombre de la estadistica, el valor y una representación gráfica
+La tercera sección se tiene la información de las estadisticas base mostradas en una lista. Cada elemento tiene el nombre de la estadistica, el valor y una representación gráfica.
 
 ### Habilidades
 La última sección tiene enlistadas las habilidades que puede tener el pokemon. Existen 2 tipos:
@@ -40,19 +40,22 @@ La última sección tiene enlistadas las habilidades que puede tener el pokemon.
 
 ### Visualización en Español
 <p align="center">
-  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleEsp0.jpg" alt="img" width="300" height="500" />
   <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleEsp1.jpg" alt="img" width="300" height="500" />
+  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleEsp2.jpg" alt="img" width="300" height="500" />
+  
 </p>
 <p align="center">
-  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleEsp2.jpg" alt="img" width="300" height="500" />
-  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleEsp3.jpg" alt="img" width="300" height="500" />
+  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/S1.jpg" alt="img" width="300" height="500" />
+  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/S2.jpg" alt="img" width="300" height="500" />
+  
 </p>
 
 ### Visualización en Inglés
 <p align="center">
   <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleInglés.jpg" alt="img" width="300" height="500" />
-  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleInglés.jpg" alt="img" width="300" height="500" />
+  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleInglés1.jpg" alt="img" width="300" height="500" />
 </p>
 <p align="center">
-  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleInglés.jpg" alt="img" width="300" height="500" />
+  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleInglés2.jpg" alt="img" width="300" height="500" />
+  <img src="https://github.com/ResergeDX/PokedexCM/blob/master/about/DetalleEsp0.jpg" alt="img" width="300" height="500" />
 </p>
