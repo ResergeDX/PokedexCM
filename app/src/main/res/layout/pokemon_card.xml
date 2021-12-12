@@ -33,7 +33,6 @@
             android:layout_height="49dp"
             android:layout_margin="15dp"
             android:fontFamily="@font/advanced_pixel_lcd7"
-            android:text="TextView"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
